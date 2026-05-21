@@ -5,12 +5,13 @@ const jwt = require('jsonwebtoken');
 let io;
 
 const initializeSocket = (server) => {
-  io = socketIO(server, {
-    cors: {
-      origin: ['http://localhost:3000', 'http://localhost:3001'],
-      credentials: true
-    }
-  });
+  const io = require('socket.io')(server, {
+  cors: {
+    origin: ['https://aurachronsys.com', 'http://localhost:5173'],
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
+});
 
   io.on('connection', (socket) => {
     console.log('New client connected:', socket.id);
