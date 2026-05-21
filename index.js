@@ -23,9 +23,10 @@ const io = initializeSocket(server);
 
 // Middleware - ORDER MATTERS!
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173'],
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'https://aurachronsys.com', 'https://your-railway-app.up.railway.app'],
   credentials: true
 }));
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
